@@ -14,13 +14,16 @@ public:
 
 	Cstring plus(const char c);
 
-	const char* getString();
+	char* getString();
 
-	bool plusGrandQue(const Cstring &str);
-	bool infOuEgale(const Cstring &str);
+	bool plusGrandQue(Cstring &str);
+	bool infOuEgale(Cstring &str);
 	Cstring plusGrand(const Cstring &str);
 
+	static int nbrChaines();
+
 private:
+	static int count;
 	char *string;
 
 	//static unsigned int occurence;
