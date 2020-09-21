@@ -16,18 +16,9 @@ public:
 
 	const char* getString();
 
-	Cstring operator= (const Cstring &str)
-	{
-		delete[] this->string;
-		this->string = nullptr;
-
-		this->string = new char[strlen(str.string)];
-		strcpy(this->string, str.string);
-
-		return *this;
-	}
-
-	void print();
+	bool plusGrandQue(const Cstring &str);
+	bool infOuEgale(const Cstring &str);
+	Cstring plusGrand(const Cstring &str);
 
 private:
 	char *string;

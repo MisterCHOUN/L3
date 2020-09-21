@@ -15,13 +15,13 @@ int main(int argc, char const *argv[])
 	s3 = s1.plus('w');
 	std::cout << "s3=" << s3.getString() << std::endl;
 
-	//s3.print();
-	/*if(s1.plusGrandQue(s2))
+	if(s1.plusGrandQue(s2)) //si s1 > s2 au sens alphabétiq
 		std::cout << "plus grand" << std::endl;
-	if(s1.infOuEgale(s2))
+	
+	if(s1.infOuEgale(s2)) //si s1 <= s2 au sens alphabétiq
 		std::cout << "plus petit" << std::endl ;
 
-	s3 = s1.plusGrand( s2 );*/
+	s3 = s1.plusGrand(s2); //retourner s1 si s1>s2, s2 sino
 
 	return 0;
 }
