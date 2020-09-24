@@ -16,12 +16,12 @@ Dans cet exercice, vous créerez une classe `Fraction` représentant un nombre r
 1. Sur la forge, créez le projet Java `SimpleFraction`;
 En terme de *commits*, quelle différence constatez-vous entre cocher une (ou plusieurs) des cases *Initialize this repository with* et n'en cocher aucune ?
     > Répondre ici
-        Github va directement creer les fichiers que nous avons selectionner (Readme, .gitignore ou license), afin de bien organiser son projet.
+        Github va directement creer les fichiers que nous avons selectionner (Readme, .gitignore ou license), afin de bien organiser notre projet.
 
     Pour la suite, ne cochez aucune de ces cases.
 1. Localement, configurez `git` avec votre nom (`user.name`) et votre email (`user.email`);
     ```bash
-    git config --global user.name "ugo BATTISTON"
+    git config --global user.name "ugo"
     git config --global user.email "ugo.battiston@ens.uvsq.fr"
     ```
 1. Initialisez le dépôt `git` local pour le projet;
@@ -38,7 +38,7 @@ Validez les changements;
 1. Ajoutez un constructeur et la méthode `toString` à la classe `Fraction` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    git add Fraction.java
+    git add Fraction.java Main.java
     ```
 1. Publiez vos modifications sur le dépôt distant;
 Vous utiliserez le protocole `https` pour cela;
@@ -62,14 +62,15 @@ Quelle syntaxe est utilisée pour ce fichier ?
     ```
 1. Retirez les fichiers de configuration de l'IDE du projet;
     ```bash
-    (je n ai aucun fichier de l IDE, je compile à la main avec un makefile et j utilise comme editeur sublime text)
+    Je n ai aucun fichier de l IDE, je compile à la main avec un makefile et j utilise comme editeur sublime text.
     ```
     Ajoutez-les aux fichiers ignorés par `git`.
     ```bash
-    (je n ai aucun fichier de l IDE, je compile à la main avec un makefile et j utilise comme editeur sublime text)
+    Je n ai aucun fichier de l IDE, je compile à la main avec un makefile et j utilise comme editeur sublime text.
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Use the SSH protocol with Bitbucket Cloud](https://confluence.atlassian.com/bitbucket/use-the-ssh-protocol-with-bitbucket-cloud-221449711.html)).
     > Expliquez la procédure de façon synthétique
+    La procedure consiste a creer une clef privé et public ssh. ensuite, sur le gestionnaire de projet, on indique la clef public. Lors de la creation d un nouveau projet, on n'utilisera pas le protocole de communication https mais ssh afin de pouvoir echanger avec le serveur sans rentrer une authentification a chaque changement apporter au depot.
 
 ## Partie en distanciel : révisions et perfectionnement *shell* et *IDE*
 ### Maîtriser le *shell* de commandes
