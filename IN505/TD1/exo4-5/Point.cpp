@@ -25,11 +25,14 @@ Point::~Point()
 	std::cout << "appel au destructeur" << std::endl;
 }
 
+
 /*-------------------------------------------------------------------------*/
 
-void Point::afficher() const
+
+void Point::afficher(std::ostream &os) const
 {
-	printf("(%f,%f)\n", this->X, this->Y);
+	//printf("(%f,%f)\n", this->X, this->Y);
+	os << "[" << this->X << "," << this->Y << "]";
 }
 
 void Point::cloner(const Point &p)

@@ -1,7 +1,7 @@
 #include "Cstring.hpp"
 
 
-int Cstring::count = 0;
+int Cstring::countInstance = 0;
 
 
 Cstring::Cstring()
@@ -9,7 +9,7 @@ Cstring::Cstring()
 	this->string = new char[1];
 	this->string[1] = '\0';
 
-	count++;
+	countInstance++;
 }
 
 Cstring::Cstring(const char c)
@@ -18,7 +18,7 @@ Cstring::Cstring(const char c)
 	this->string[0] = c;
 	this->string[1] = '\0';
 
-	count++;
+	countInstance++;
 }
 
 Cstring::Cstring(const char *str)
@@ -27,34 +27,30 @@ Cstring::Cstring(const char *str)
 	strcpy(this->string, str);
 	this->string[strlen(str)] = '\0';
 
-	count++;
+	countInstance++;
 }
 
 Cstring::~Cstring()
 {
-	if(this->string == nullptr)
-	{
-		delete[] this->string;
-		this->string = nullptr;
-	}
-	
+	delete[] this->string;
+	this->string = nullptr;
 
-	count--;
+	countInstance--;
 }
 
 
 /*-------------------------------------------------------*/
 
 
-Cstring Cstring::plus(const char c)
+void Cstring::plus(const char c)
 {
-	char buffer[strlen(this->string) + 2];
+	char* buffer = new char[strlen(this->string) + 2];
 
 	strcpy(buffer, this->string);
 	buffer[strlen(this->string)] = c;
 	buffer[strlen(this->string) + 1] = '\0';
-
-	return Cstring(buffer);
+	delete[] this->string;
+	this->string = buffer;
 }
 
 
@@ -101,17 +97,17 @@ bool Cstring::infOuEgale(Cstring &str)
 	return this->string[0] <= buffer[0];
 }
 
-Cstring Cstring::plusGrand(const Cstring &str)
+void Cstring::plusGrand(const Cstring &str)
 {
-	if(strlen(this->string) > strlen(str.string))
+	/*if(strlen(this->string) > strlen(str.string))
 		return *this;
 	else
 		return str;
-	return *this;
+	//return *this;*/
 }
 
 
 int Cstring::nbrChaines()
 {
-	return count;
+	return countInstance;
 }

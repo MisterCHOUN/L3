@@ -4,22 +4,29 @@
 #include "Segment.hpp"
 
 
+std::ostream& operator<<(std::ostream &os, Point &p)
+{
+	p.afficher(os);
+	return os;
+}
+
+
 int main(int argc, char const *argv[])
 {
 	//exo4 ---------------------------------------------------
 	printf("---exo4---\n\n");
 	
-	Point p(12.f, 13.f);
-	p.afficher();
+	Point p(6.f, 9.f);
+	std::cout << p << "\n";
 
 	Point f;
-	f.afficher();
+	std::cout << f << "\n";
 
 	Point g(p);
-	g.afficher();
+	std::cout << g << "\n";
 
 	f.cloner(p);
-	f.afficher();
+	std::cout << f << "\n";
 
 
 	//exo5 ---------------------------------------------------

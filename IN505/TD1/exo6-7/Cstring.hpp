@@ -12,19 +12,17 @@ public:
 	Cstring(const char *str);
 	~Cstring();
 
-	Cstring plus(const char c);
+	void plus(const char c);
 
 	char* getString();
 
 	bool plusGrandQue(Cstring &str);
 	bool infOuEgale(Cstring &str);
-	Cstring plusGrand(const Cstring &str);
+	void plusGrand(const Cstring &str);
 
 	static int nbrChaines();
 
 private:
-	static int count;
+	static int countInstance;
 	char *string;
-
-	//static unsigned int occurence;
 };

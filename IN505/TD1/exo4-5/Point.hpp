@@ -10,11 +10,11 @@ public:
 	Point(const Point &p);
 	~Point();
 
-	void afficher() const;
+	void afficher(std::ostream &os) const;
 	void cloner(const Point &p);
 	const float getX();
 	const float getY();
-	
+
 private:
 	float X, Y;
 };

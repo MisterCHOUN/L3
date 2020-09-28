@@ -1,5 +1,5 @@
 cc = g++
-cflags = -Wall
+cflags = -Wall -g
 
 objdir = obj/
 
@@ -10,7 +10,7 @@ all: prog
 prog: $(objdir)Definition.o $(objdir)Cstring.o $(objdir)main.o
 	$(cc) $(cflags) -o $@ $^
 
-$(objdir)main.o: main.cpp
+$(objdir)main.o: main.cpp $(objdir)Cstring.o $(objdir)Definition.o
 	$(cc) -c $(cflags) -o $@ $<
 
 $(objdir)Cstring.o: Cstring.cpp Cstring.hpp
