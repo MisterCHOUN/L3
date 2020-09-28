@@ -29,6 +29,16 @@ Point::~Point()
 /*-------------------------------------------------------------------------*/
 
 
+std::ostream& operator<<(std::ostream &os, Point &p)
+{
+	p.afficher(os);
+	return os;
+}
+
+
+/*-------------------------------------------------------------------------*/
+
+
 void Point::afficher(std::ostream &os) const
 {
 	//printf("(%f,%f)\n", this->X, this->Y);

@@ -4,13 +4,6 @@
 #include "Segment.hpp"
 
 
-std::ostream& operator<<(std::ostream &os, Point &p)
-{
-	p.afficher(os);
-	return os;
-}
-
-
 int main(int argc, char const *argv[])
 {
 	//exo4 ---------------------------------------------------
@@ -49,6 +42,8 @@ int main(int argc, char const *argv[])
 	std::cout << x.estHorizontal() << "\n";
 	std::cout << x.estSurDiagonale() << "\n\n";
 
+	std::cout << x << std::endl;
+
 
 	Segment v(0, 0, 10, 10);
 
@@ -56,6 +51,8 @@ int main(int argc, char const *argv[])
 	std::cout << v.estVertical() << "\n";
 	std::cout << v.estHorizontal() << "\n";
 	std::cout << v.estSurDiagonale() << "\n\n";
+
+	std::cout << v << std::endl;
 
 
 	return 0;

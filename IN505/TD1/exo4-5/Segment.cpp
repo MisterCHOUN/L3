@@ -27,6 +27,14 @@ Segment::~Segment()
 
 /*-------------------------------------------------------------------------*/
 
+std::ostream& operator<<(std::ostream &os, Segment &p)
+{
+	os << "{" << p.getPoint1() << p.getPoint2() << "}";
+	return os;
+}
+
+/*-------------------------------------------------------------------------*/
+
 
 float Segment::longueur()
 {
@@ -46,4 +54,14 @@ bool Segment::estHorizontal()
 bool Segment::estSurDiagonale()
 {
 	return !(this->estHorizontal() || this->estVertical());
+}
+
+Point& Segment::getPoint1()
+{
+	return p1;
+}
+
+Point& Segment::getPoint2()
+{
+	return p2;
 }

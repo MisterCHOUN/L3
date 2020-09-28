@@ -15,6 +15,8 @@ public:
 	const float getX();
 	const float getY();
 
+	friend std::ostream& operator<<(std::ostream &os, Point &p);
+
 private:
 	float X, Y;
 };
