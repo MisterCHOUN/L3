@@ -119,7 +119,7 @@ Donnez un exemple.
     * `curl`/[HTTPie](https://httpie.org/)
         > Répondre ici
     * [jq](https://stedolan.github.io/jq/)
-        > Répondre ici
+        > C'est un programme permettant de faire des opération sur des données json.
 
 ### Découverte de votre *IDE*
 Dans cet exercice, vous expliquerez en quelques phrases comment vous réalisez les actions ci-dessous dans votre IDE.
