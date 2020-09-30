@@ -139,8 +139,7 @@ Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la d
 1. Comment préciser la version Java des sources dans un projet ?
     > Répondre ici
 1. Comment ajouter une bibliothèque externe dans un projet ?
-    > Lors de la compilation javac -cp ".:.library/Path" file.java
-    > Lors de l'exection java -cp ".:.library/Path" file
+    > Lors de la compilation javac -cp ".:.library/Path" file.java. Et lors de l'exection java -cp ".:.library/Path" file
 1. Comment reformater un fichier source Java ?
     > Répondre ici
 1. Comment trouver la déclaration d'une variable ou méthode ?
