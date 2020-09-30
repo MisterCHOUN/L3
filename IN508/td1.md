@@ -113,7 +113,7 @@ Donnez un exemple.
         ```
 1. Expliquez en une ou deux phrases le rôle de ces commandes et dans quel contexte elles peuvent être utiles pour un développeur.
     * `ssh`
-        > Répondre ici
+        > ssh permet de se connecter a distance avec une autre machine. Il peut permettre de travailler à distance sur un serveur par exemple. 
     * `screen`/`tmux`
         > Répondre ici
     * `curl`/[HTTPie](https://httpie.org/)
