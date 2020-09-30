@@ -128,8 +128,7 @@ Vous pouvez choisir l'IDE/éditeur de texte de votre choix.
 Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la documentations de l'IDE ([IntelliJ IDEA](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#developer-tools), [Visual Studio Code](https://code.visualstudio.com/docs), [Eclipse](https://help.eclipse.org/2020-09/index.jsp), ...).
 
 1. Quels IDE ou éditeurs de texte utilisez-vous pour le développement Java ?
-    > Répondre ici
-    Sublime Text 3
+    > Sublime Text 3
 
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
