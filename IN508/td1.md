@@ -140,10 +140,11 @@ Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la d
     > Répondre ici
 1. Comment ajouter une bibliothèque externe dans un projet ?
     > Lors de la compilation javac -cp ".:.library/Path" file.java. Et lors de l'exection java -cp ".:.library/Path" file
+    
 1. Comment reformater un fichier source Java ?
     > Répondre ici
 1. Comment trouver la déclaration d'une variable ou méthode ?
-    > Répondre ici
+    > Dans le menu find il y a une rubrique find afin de trouver des mots, variables, methodes. (ou grâce au raccourcie Ctrl-F)
 1. Comment insérer un bloc de code prédéfini (*snippet*) ?
     > Répondre ici
 1. Comment renommer une classe dans l'ensemble du projet ?
