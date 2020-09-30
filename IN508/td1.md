@@ -148,7 +148,7 @@ Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la d
 1. Comment insérer un bloc de code prédéfini (*snippet*) ?
     > Répondre ici
 1. Comment renommer une classe dans l'ensemble du projet ?
-    > Répondre ici
+    > Dans le menu find il y a une rubrique replace afin de trouver des mots, variables, methodes et de le/la renommer. (ou grâce au raccourcie Ctrl-H)
 1. Comment exécuter le programme en lui passant un paramètre en ligne de commande ?
     > Répondre ici
 1. Comment déboguer le programme en visualisant le contenu d'une ou plusieurs variables ?
