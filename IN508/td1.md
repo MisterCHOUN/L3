@@ -132,12 +132,10 @@ Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la d
 
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
-    > Répondre ici
-    Il y a une barre en bas de l'editeur avec des informations, comme la position du curseur dans le fichier et aussi l'encodage du fichier. En cliquant dessus, on peut modifier l'encodage.
+    > Il y a une barre en bas de l'editeur avec des informations, comme la position du curseur dans le fichier et aussi l'encodage du fichier. En cliquant dessus, on peut modifier l'encodage.
 
 1. Comment choisir le JDK à utiliser dans un projet ?
-    > Répondre ici
-    Grâce à la commande dans le terminal $ sudi update alternatives --config java
+    > Grâce à la commande dans le terminal $ sudi update alternatives --config java
 
 1. Comment préciser la version Java des sources dans un projet ?
     > Répondre ici
