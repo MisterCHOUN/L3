@@ -15,8 +15,7 @@ Dans cet exercice, vous créerez une classe `Fraction` représentant un nombre r
 
 1. Sur la forge, créez le projet Java `SimpleFraction`;
 En terme de *commits*, quelle différence constatez-vous entre cocher une (ou plusieurs) des cases *Initialize this repository with* et n'en cocher aucune ?
-    > Répondre ici
-        Github va directement creer les fichiers que nous avons selectionner (Readme, .gitignore ou license), afin de bien organiser notre projet.
+    > Github va directement creer les fichiers que nous avons selectionner (Readme, .gitignore ou license), afin de bien organiser notre projet.
 
     Pour la suite, ne cochez aucune de ces cases.
 1. Localement, configurez `git` avec votre nom (`user.name`) et votre email (`user.email`);
