@@ -27,25 +27,26 @@ En terme de *commits*, quelle différence constatez-vous entre cocher une (ou pl
 1. Initialisez le dépôt `git` local pour le projet;
     ```bash
     git init
-    git remote add origin https://github.com/johnkyky/SimpleFraction.git
     ```
 1. Créez la classe `Fraction` (vide pour le moment) et la classe `Main` (avec un simple affichage) dans le projet;
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements;
     ```bash
     git add Main.java Fraction.java
+    git commit -m "ajout de Main.java et de Fraction.java"
     ```
 1. Ajoutez un constructeur et la méthode `toString` à la classe `Fraction` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    git add Fraction.java Main.java
+    git commit -am "ajout de la methode toString dans Fraction.java"
     ```
 1. Publiez vos modifications sur le dépôt distant;
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    git commit -m "ajout de Main.java et de Fraction.java"
-    git pull
+    git branch -M master
+    git remote add origin https://github.com/uvsq21805659/SimpleFraction.git
+    git push -u origin master
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
@@ -70,7 +71,7 @@ Quelle syntaxe est utilisée pour ce fichier ?
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Use the SSH protocol with Bitbucket Cloud](https://confluence.atlassian.com/bitbucket/use-the-ssh-protocol-with-bitbucket-cloud-221449711.html)).
     > Expliquez la procédure de façon synthétique
-    La procedure consiste a creer une clef privé et public ssh. ensuite, sur le gestionnaire de projet, on indique la clef public. Lors de la creation d un nouveau projet, on n'utilisera pas le protocole de communication https mais ssh afin de pouvoir echanger avec le serveur sans rentrer une authentification a chaque changement apporter au depot.
+    La procedure consiste a creer une clef privé et public ssh. Ensuite, sur le gestionnaire de projet de github, on indique la clef public. Lors de la creation d un nouveau projet, on n'utilisera pas le protocole de communication https mais ssh afin de pouvoir echanger avec le serveur sans rentrer une authentification a chaque changement apporter au depot.
 
 ## Partie en distanciel : révisions et perfectionnement *shell* et *IDE*
 ### Maîtriser le *shell* de commandes
@@ -80,19 +81,20 @@ Pour répondre à ces questions, vous devez effectuer les recherches documentair
 
 1. Quel OS et quel shell de commande utilisez-vous ?
     > Répondre ici
+    J'utilise la distribution linux Fedora 32 et j'utilise le comme shell bash
 1. Quelle commande permet d'obtenir de l'aide ?
 Donnez un exemple.
     ```bash
-    # Répondre ici
+    man cd
     ```
 1. Donnez la ou les commandes shell permettant de
     1. afficher les fichiers d'un répertoire triés par taille (taille affichée lisiblement)
         ```bash
-        # Répondre ici
+        ls -srh
         ```
     1. compter le nombre de ligne d'un fichier
         ```bash
-        # Répondre ici
+        wc -l [file]
         ```
     1. afficher les lignes du fichier `Main.java` contenant la chaîne `uneVariable`
         ```bash
@@ -108,7 +110,7 @@ Donnez un exemple.
         ```
     1. afficher les différences entre deux fichiers textes
         ```bash
-        # Répondre ici
+        diff [file] [file]
         ```
 1. Expliquez en une ou deux phrases le rôle de ces commandes et dans quel contexte elles peuvent être utiles pour un développeur.
     * `ssh`
@@ -127,12 +129,17 @@ Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la d
 
 1. Quels IDE ou éditeurs de texte utilisez-vous pour le développement Java ?
     > Répondre ici
+    Sublime Text 3
 
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
     > Répondre ici
+    Il y a une barre en bas de l'editeur avec des informations, comme la position du curseur dans le fichier et aussi l'encodage du fichier. En cliquant dessus, on peut modifier l'encodage.
+
 1. Comment choisir le JDK à utiliser dans un projet ?
     > Répondre ici
+    Grâce à la commande dans le terminal $ sudi update alternatives --config java
+
 1. Comment préciser la version Java des sources dans un projet ?
     > Répondre ici
 1. Comment ajouter une bibliothèque externe dans un projet ?
