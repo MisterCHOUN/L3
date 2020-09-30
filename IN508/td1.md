@@ -115,7 +115,7 @@ Donnez un exemple.
     * `ssh`
         > ssh permet de se connecter a distance avec une autre machine. Il peut permettre de travailler à distance sur un serveur par exemple. 
     * `screen`/`tmux`
-        > Programme permettant de separer son terminal en plusieur terminal virtuel.
+        > Programme permettant de séparer son terminal en plusieur terminal virtuel.
     * `curl`/[HTTPie](https://httpie.org/)
         > Outils permettant le transfert de données intermachine selon un protocole donné.
     * [jq](https://stedolan.github.io/jq/)
