@@ -117,7 +117,7 @@ Donnez un exemple.
     * `screen`/`tmux`
         > Répondre ici
     * `curl`/[HTTPie](https://httpie.org/)
-        > Répondre ici
+        > Outils permettant le transfert de données intermachine selon un protocole donné.
     * [jq](https://stedolan.github.io/jq/)
         > C'est un programme permettant de faire des opération sur des données json.
 
