@@ -3,109 +3,133 @@
 
 int Cstring::countInstance = 0;
 
+/*-------------------------------------------------------------------------------------------*/
 
-Cstring::Cstring()
+Cstring::Cstring() : size(0)
 {
-	this->string = new char[1];
-	this->string[1] = '\0';
-
 	countInstance++;
 }
 
 Cstring::Cstring(const char c)
 {
-	this->string = new char[2];
-	this->string[0] = c;
-	this->string[1] = '\0';
+	size = 2;
+	string = std::make_unique<char[]>(size);
+	string[0] = c;
+	string[1] = '\0';
 
 	countInstance++;
 }
 
 Cstring::Cstring(const char *str)
 {
-	this->string = new char[strlen(str) + 1];
-	strcpy(this->string, str);
-	this->string[strlen(str)] = '\0';
+	size = strlen(str) + 1;
+	string = std::make_unique<char[]>(size);
+	strcpy(string.get(), str);
+	string[size - 1] = '\0';
 
 	countInstance++;
 }
 
+Cstring::Cstring(const Cstring& cstr) : Cstring(cstr.string.get())
+{
+
+}
+
 Cstring::~Cstring()
 {
-	delete[] this->string;
-	this->string = nullptr;
 
-	countInstance--;
 }
 
+/*-------------------------------------------------------------------------------------------*/
 
-/*-------------------------------------------------------*/
-
-
-void Cstring::plus(const char c)
+void Cstring::resize(unsigned int new_size)
 {
-	char* buffer = new char[strlen(this->string) + 2];
-
-	strcpy(buffer, this->string);
-	buffer[strlen(this->string)] = c;
-	buffer[strlen(this->string) + 1] = '\0';
-	delete[] this->string;
-	this->string = buffer;
+	std::unique_ptr<char[]> res = std::make_unique<char[]>(new_size);
+	size = new_size;
+	strcpy(res.get(), string.get());
+	res.get()[size - 1] = '\0';
+	string = std::move(res);
 }
 
+/*-------------------------------------------------------------------------------------------*/
 
-char* Cstring::getString()
+const Cstring& Cstring::operator=(const Cstring& cstr)
 {
-	return this->string;
+	resize(cstr.size);
+	strcpy(string.get(), cstr.string.get());
+	return *this;
 }
 
-
-bool Cstring::plusGrandQue(Cstring &str)
+const Cstring& Cstring::operator=(Cstring&& cstr)
 {
-	char *buffer = str.getString();
-	int i(0), j(0);
-	
-	//printf("%s %s\n", string, buffer);
+	size = cstr.size;
+	string = std::move(cstr.string);
+	return *this;
+}
 
-	while(this->string[i] != '\0' && buffer[j] != '\0')
+Cstring Cstring::operator+(const char& c)
+{
+	Cstring res = *this;
+	res.size++;
+	res.resize(res.size);
+	res.string[res.size - 2] = c;
+	res.string[res.size - 1] = '\0';
+	return res;
+}
+
+const bool Cstring::operator<(const Cstring& cstr)
+{
+	for (unsigned int i = 0; i < std::min(size, cstr.size); ++i)
 	{
-		if(this->string[i] > buffer[j])
-			return true;
-		else if(this->string[i] < buffer[j])
-			return false;
-
-		i++;
-		j++;
+		if(string[i] != cstr.string[i])
+			return string[i] < cstr.string[i];
 	}
-	if(this->string[i] == '\0' && buffer[j] == '\0')
-		return false;
-	else if(this->string[i] == '\0')
+	if(size >= cstr.size)
 		return false;
 	return true;
 }
 
-bool Cstring::infOuEgale(Cstring &str)
+const bool Cstring::operator<=(const Cstring& cstr)
 {
-	char *buffer = str.getString();
-
-	//printf("%s %s\n", string, buffer);
-	
-	if(this->string[0] == '\0')
-		return true;
-	else if(buffer[0] == '\0')
+	for (unsigned int i = 0; i < std::min(size, cstr.size); ++i)
+	{
+		if(string[i] != cstr.string[i])
+			return string[i] < cstr.string[i];
+	}
+	if(size > cstr.size)
 		return false;
-	return this->string[0] <= buffer[0];
+	return true;
 }
 
-void Cstring::plusGrand(const Cstring &str)
+const bool Cstring::operator>(const Cstring& cstr)
 {
-	/*if(strlen(this->string) > strlen(str.string))
-		return *this;
-	else
-		return str;
-	//return *this;*/
+	return !(*this <= cstr);
 }
 
+const bool Cstring::operator>=(const Cstring& cstr)
+{
+	return !(*this < cstr);
+}
+
+std::ostream& operator<<(std::ostream& flux, const Cstring& cstr)
+{
+	flux << cstr.string.get();
+	return flux;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+char* Cstring::getString()
+{
+	return string.get();
+}
+
+const Cstring& Cstring::plusGrand(const Cstring& cstr)
+{
+	return (*this > cstr) ? *this : cstr;
+}
+
+/*-------------------------------------------------------------------------------------------*/
 
 int Cstring::nbrChaines()
 {

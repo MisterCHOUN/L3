@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <string.h>
 
 
@@ -10,19 +11,33 @@ public:
 	Cstring();
 	Cstring(const char c);
 	Cstring(const char *str);
+	Cstring(const Cstring& cstr);
 	~Cstring();
 
-	void plus(const char c);
+
+	const Cstring& operator=(const Cstring& cstr);
+	const Cstring& operator=(Cstring&& cstr);
+
+	Cstring operator+(const char& c);
+
+	const bool operator<(const Cstring& cstr);
+	const bool operator<=(const Cstring& cstr);
+	const bool operator>(const Cstring& cstr);
+	const bool operator>=(const Cstring& cstr);
+	friend std::ostream& operator<<(std::ostream& flux, const Cstring& cstr);
+
 
 	char* getString();
+	const Cstring& plusGrand(const Cstring& cstr);
 
-	bool plusGrandQue(Cstring &str);
-	bool infOuEgale(Cstring &str);
-	void plusGrand(const Cstring &str);
 
 	static int nbrChaines();
 
 private:
+	void resize(unsigned int new_size);
+
+private:
 	static int countInstance;
-	char *string;
+	std::unique_ptr<char[]> string;
+	unsigned int size;
 };

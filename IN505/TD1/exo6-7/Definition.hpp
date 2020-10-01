@@ -11,8 +11,8 @@ public:
 	Definition(const char* word, const char* definition);
 	~Definition();
 
-	const char* getClef();
-	const char* getDef();
+	const Cstring& getClef();
+	const Cstring& getDef();
 
 private:
 	Cstring mot, def;

@@ -20,12 +20,12 @@ Definition::~Definition()
 
 /*--------------------------------------------------------------------------*/
 
-const char* Definition::getClef()
+const Cstring& Definition::getClef()
 {
-	return this->mot.getString();
+	return mot;
 }
 
-const char* Definition::getDef()
+const Cstring& Definition::getDef()
 {
-	return this->def.getString();
+	return def;
 }
