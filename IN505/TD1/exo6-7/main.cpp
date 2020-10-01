@@ -37,7 +37,3 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
-
-
-
-// dans resize ne pas faire de strcpy

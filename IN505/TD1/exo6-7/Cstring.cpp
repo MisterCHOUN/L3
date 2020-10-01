@@ -46,7 +46,8 @@ void Cstring::resize(unsigned int new_size)
 {
 	std::unique_ptr<char[]> res = std::make_unique<char[]>(new_size);
 	size = new_size;
-	strcpy(res.get(), string.get());
+	for (unsigned int i = 0; i < size; ++i)
+		res[i] = string[i];
 	res.get()[size - 1] = '\0';
 	string = std::move(res);
 }
