@@ -10,7 +10,7 @@ all: prog
 prog: $(objdir)main.o $(objdir)CList.o $(objdir)CPile.o
 	$(cc) $(cflags) -o $@ $^
 
-$(objdir)main.o: main.cpp $(objdir)CList.o $(objdir)CPile.o
+$(objdir)main.o: main.cpp $(objdir)CPile.o
 	$(cc) -c $(cflags) -o $@ $<
 
 $(objdir)CList.o: CList.cpp CList.hpp

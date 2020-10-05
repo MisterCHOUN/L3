@@ -1,25 +1,28 @@
 #include <iostream>
 
-#include "CList.hpp"
 #include "CPile.hpp"
+#include "CFile.hpp"
 
 int main(int argc, char const *argv[])
 {
-	std::cout << "Hello World !" << std::endl;
+	CPile<int> pile;
+	CFile<int> file;
 
-	CList<int> list1(123), list2;
+	printf("FILE :\n");
+	CList<int>* ptList = &file;
+	*ptList < 0 < 1;
+	std::cout << *ptList << "\n";
+	int i = 0;
+	file > i;
+	std::cout << *ptList << " i = " << i << "\n";
 
-	list1 += 12;
-	list1 += 1;
 
-	std::cout << list1 << std::endl;
-	std::cout << list2 << std::endl;
-
-	printf("\n\n");
-
-	CPile<float> pile1(98);
-
-	std::cout << pile1 << std::endl;
+	printf("\nPILE\n");
+	ptList = &pile;
+	*ptList < 0 < 1;
+	std::cout << *ptList << "\n";
+	pile > i;
+	std::cout << *ptList << " i = " << i << "\n";
 
 
 	return 0;

@@ -1,8 +1,8 @@
-#pragma once
+#ifndef CLIST_H
+#define CLIST_H
 
 #include <iostream>
 #include <memory>
-
 
 
 
@@ -12,8 +12,8 @@ struct node
 	U m_val;
 	node* next;
 
-	node() {}
-	node(const U& val) {m_val  = val; next = nullptr;}
+	node() : next(nullptr) {}
+	node(const U& val) {m_val  = val;}
 };
 
 
@@ -25,10 +25,7 @@ template<typename T>
 class CList
 {
 public:
-	CList() : m_list(nullptr), m_listEnd(nullptr), m_listSize(0)
-	{
-
-	}
+	CList() : m_list(nullptr), m_listEnd(nullptr), m_listSize(0) {}
 
 	CList(const T& t) : m_listSize(1)
 	{
@@ -54,13 +51,7 @@ public:
 	/*----------------------------------------------------------------------------*/
 
 
-	const CList& operator+=(const T& t)
-	{
-		m_listSize++;
-		m_listEnd->next = new node<T>(t);
-		m_listEnd = m_listEnd->next;
-		return *this;
-	}
+	virtual const CList& operator+=(const T& t) = 0;
 
 	const CList& operator=(const CList& list)
 	{
@@ -89,6 +80,9 @@ public:
 		return *this;
 	}
 
+	virtual CList& operator<(const T& t) = 0;
+
+	virtual const CList& operator>(T& t) = 0;
 
 	friend std::ostream& operator<<(std::ostream& flux, const CList<T>& list)
 	{
@@ -113,3 +107,5 @@ protected:
 	unsigned int m_listSize;
 };
 
+
+#endif
